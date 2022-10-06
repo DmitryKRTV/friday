@@ -30,7 +30,7 @@ const Pages = () => {
                 <NavLink to={PATH.ENTERNEWPASSWORD}>EnterNewPassword </NavLink>
                 <NavLink to={PATH.TESTSUPERCOMPONENTS}>Test</NavLink>
                 <Routes>
-                    <Route path={"/#"} element={<Login/>}/>
+                    <Route path={"/"} element={<Login/>}/>
                     <Route path={PATH.LOGIN} element={<Login/>}/>
                     <Route path={PATH.REGISTER} element={<Registration/>}/>
                     <Route path={PATH.PROFILE} element={<Profile/>}/>
