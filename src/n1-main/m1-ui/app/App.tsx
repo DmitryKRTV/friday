@@ -1,14 +1,11 @@
 import React from "react";
 import "./App.css";
+import Pages from "../pages/Pages";
 
 const App = () => {
     return (
         <div className="App">
-            {/*hr, prov*/}
-            <>
-            {/*<Header/>*/}
-            {/*<Header/>*/}
-            </>
+           <Pages/>
         </div>
     );
 };
