@@ -1,5 +1,5 @@
 import React from "react"
-import {BrowserRouter, HashRouter, Route, Routes} from "react-router-dom"
+import {HashRouter, NavLink, Route, Routes} from "react-router-dom"
 import Login from "../../../n2-features/f1-auth/a1-login/Login";
 import Registration from "../../../n2-features/f1-auth/a2-register/Registration";
 import Profile from "../../../n2-features/f2-profile/Profile";
@@ -21,10 +21,16 @@ export const PATH = {
 const Pages = () => {
     return (
         <div>
-            <BrowserRouter>
+            <HashRouter basename="/">
              {/* для gh-pages нужен HashRouter*/}
+                <NavLink to={PATH.LOGIN}>Login </NavLink>
+                <NavLink to={PATH.REGISTER}>Registration </NavLink>
+                <NavLink to={PATH.PROFILE}>Profile </NavLink>
+                <NavLink to={PATH.RECOVERPASSWORD}>RecoverPassword </NavLink>
+                <NavLink to={PATH.ENTERNEWPASSWORD}>EnterNewPassword </NavLink>
+                <NavLink to={PATH.TESTSUPERCOMPONENTS}>Test</NavLink>
                 <Routes>
-                    <Route path={"/friday"} element={<Login/>}/>
+                    <Route path={"/#"} element={<Login/>}/>
                     <Route path={PATH.LOGIN} element={<Login/>}/>
                     <Route path={PATH.REGISTER} element={<Registration/>}/>
                     <Route path={PATH.PROFILE} element={<Profile/>}/>
@@ -32,9 +38,9 @@ const Pages = () => {
                     <Route path={PATH.ENTERNEWPASSWORD} element={<EnterNewPassword/>}/>
                     <Route path={PATH.TESTSUPERCOMPONENTS} element={<TestSuperComponents/>}/>
 
-                    <Route path={"*"} element={<Error404/>}/>
+                    <Route path={"/*"} element={<Error404/>}/>
                 </Routes>
-            </BrowserRouter>
+            </HashRouter>
         </div>
     )
 }
